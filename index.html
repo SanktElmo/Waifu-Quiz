@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8" />
+    
+        <title id="title"> President Simulator 3</title>
+
+        <link rel = "icon" href = "" type = "image/x-icon">
+        <link rel="stylesheet" type="text/css" href="scripts/stylesheet.css">
+
+        <style>
+            body{
+                color: white;
+                background-color: #444;
+                font-size: 1em;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            /* Base button styles */
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 3em;
+                font-weight: bold;
+                text-align: center;
+                text-decoration: none;
+                color: #fff;
+                background-color: #0077cc;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all 0.2s;
+            }
+
+            /* Hover and active states */
+            .button:hover {
+                background-color: #005ea6;
+            }
+            .button:active{
+                background-color: #015596;
+            }
+            #startPage{
+                margin-left: 20%;
+                margin-top: 10em;
+                width: 60%;
+                text-align: center;
+            }
+            #header{
+                font-size: 3em;
+            }
+            #questionPage{
+                display: none;
+                margin-left: 20%;
+                margin-top: 10em;
+                width: 60%;
+                text-align: center;
+            }
+            #question{
+                font-size: 3em;
+            }
+            #header2{
+                font-size: 1em;
+            }
+            #answerPage{
+                display: none;
+                margin-left: 20%;
+                margin-top: 10em;
+                width: 60%;
+                text-align: center;
+            }
+            #result{
+                font-size: 2em;
+            }
+        </style>
+
+	    <script type="text/javascript">
+            function start(){
+                document.getElementById("startPage").style.display="none"
+                document.getElementById("questionPage").style.display="block"
+            }
+            function answer(x){
+                switch(x){
+                    case 1:
+                        document.getElementById("result").innerHTML="You do not have a girlfriend"
+                        break;
+                    case 2:
+                        document.getElementById("result").innerHTML="We can't make assumptions about your girlfriend since you don't have a Waifu"
+                        break;
+                }
+                
+                document.getElementById("questionPage").style.display="none"
+                document.getElementById("answerPage").style.display="block"
+            }
+        </script>
+    </head>
+    <body id="body">
+        <div id="startPage">
+            <div id="header">
+                What does your Waifu say about your girlfriend?<br><br>
+            </div>
+            <button class="button" onclick="start()">
+                Start
+            </button>
+        </div>
+        <div id="questionPage">
+            <div id="header2">
+                1.
+            </div>
+            <div id="question">
+                Do you have a Waifu?<br><br>
+            </div>
+            <button class="button" onclick="answer(1)">
+                Yes
+            </button>
+            <button class="button" onclick="answer(2)">
+                No
+            </button>
+        </div>
+        <div id="answerPage">
+            <div id="header">
+                Result<br><br>
+            </div>
+            <div id="result">
+            </div>
+        </div>
+    </body>
+</html>
